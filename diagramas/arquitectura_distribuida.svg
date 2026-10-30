@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 860" width="100%" height="100%" style="background:#0f172a; font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="gradClient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="gradDMZ" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#d97706" stop-opacity="0.25"/>
+    </linearGradient>
+    <linearGradient id="gradPriv" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#6d28d9" stop-opacity="0.22"/>
+    </linearGradient>
+    <linearGradient id="gradData" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#047857" stop-opacity="0.22"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#34d399" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#c084fc" />
+    </marker>
+  </defs>
+
+  <text x="550" y="42" text-anchor="middle" fill="#f8fafc" font-size="24" font-weight="bold">ARQUITECTURA DISTRIBUIDA (CLIENTE - SERVIDOR)</text>
+  <text x="550" y="66" text-anchor="middle" fill="#94a3b8" font-size="13">PFO 3 - Programación sobre Redes | Alumno: Novillo Guillermo Tadeo | Nginx - RabbitMQ - Workers ThreadPool - PostgreSQL - S3</text>
+
+  <rect x="40" y="90" width="1020" height="115" rx="14" fill="url(#gradClient)" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 4" filter="url(#shadow)"/>
+  <text x="60" y="118" fill="#38bdf8" font-size="13" font-weight="bold" letter-spacing="1">1. CAPA DE CLIENTES (RED PÚBLICA / INTERNET)</text>
+  
+  <rect x="70" y="132" width="280" height="58" rx="8" fill="#1e293b" stroke="#0ea5e9" stroke-width="1.5"/>
+  <text x="85" y="157" fill="#e2e8f0" font-size="14" font-weight="bold">Cliente Web (SPA / Browser)</text>
+  <text x="85" y="176" fill="#94a3b8" font-size="11">HTTP/HTTPS • Interfaz Gráfica de Usuario</text>
+
+  <rect x="410" y="132" width="280" height="58" rx="8" fill="#1e293b" stroke="#0ea5e9" stroke-width="1.5"/>
+  <text x="425" y="157" fill="#e2e8f0" font-size="14" font-weight="bold">Clientes Móviles (iOS / Android)</text>
+  <text x="425" y="176" fill="#94a3b8" font-size="11">App Móvil • Envíos de telemetría y tareas</text>
+
+  <rect x="750" y="132" width="280" height="58" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+  <text x="765" y="157" fill="#38bdf8" font-size="14" font-weight="bold">Cliente Socket TCP (cliente.py)</text>
+  <text x="765" y="176" fill="#cbd5e1" font-size="11">Python Sockets • Reintentos + Concurrencia</text>
+
+  <line x1="210" y1="190" x2="480" y2="245" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="550" y1="190" x2="550" y2="245" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="890" y1="190" x2="620" y2="245" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="250" y="245" width="600" height="85" rx="14" fill="url(#gradDMZ)" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="270" y="270" fill="#fbbf24" font-size="12" font-weight="bold" letter-spacing="1">2. BALANCEADOR DE CARGA (ZONA DMZ / CORTAFUEGOS PÚBLICO)</text>
+  <rect x="270" y="280" width="560" height="40" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+  <text x="285" y="305" fill="#fef08a" font-size="14" font-weight="bold">Nginx / HAProxy — Reverse Proxy &amp; TCP Load Balancer</text>
+  <text x="640" y="305" fill="#94a3b8" font-size="11">Round-Robin / SSL Termination</text>
+
+  <line x1="550" y1="330" x2="550" y2="368" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="40" y="370" width="1020" height="295" rx="14" fill="url(#gradPriv)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="60" y="395" fill="#c084fc" font-size="12" font-weight="bold" letter-spacing="1">3. ZONA PRIVADA / APLICACIÓN (CORTAFUEGOS PRIVADO - RED SEGURA INTER-NODOS)</text>
+
+  <rect x="70" y="415" width="280" height="80" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="85" y="442" fill="#e2e8f0" font-size="14" font-weight="bold">Servidor Socket TCP</text>
+  <text x="85" y="462" fill="#cbd5e1" font-size="12">(servidor.py • Master Socket)</text>
+  <text x="85" y="482" fill="#94a3b8" font-size="11">Recibe tareas cliente y despacha</text>
+
+  <line x1="350" y1="455" x2="415" y2="455" stroke="#c084fc" stroke-width="2" marker-end="url(#arrow-purple)"/>
+  <text x="355" y="445" fill="#e9d5ff" font-size="10">enqueue()</text>
+
+  <rect x="420" y="415" width="240" height="80" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+  <text x="435" y="442" fill="#f472b6" font-size="14" font-weight="bold">RabbitMQ (Message Broker)</text>
+  <text x="435" y="462" fill="#cbd5e1" font-size="12">Cola AMQP: 'cola_tareas'</text>
+  <text x="435" y="482" fill="#94a3b8" font-size="11">Desacopla carga &amp; buffer asíncrono</text>
+
+  <path d="M 660 455 L 720 455 L 720 440 L 760 440" fill="none" stroke="#f472b6" stroke-width="2" marker-end="url(#arrow-purple)"/>
+  <path d="M 660 455 L 720 455 L 720 520 L 760 520" fill="none" stroke="#f472b6" stroke-width="2" marker-end="url(#arrow-purple)"/>
+  <path d="M 660 455 L 720 455 L 720 600 L 760 600" fill="none" stroke="#f472b6" stroke-width="2" marker-end="url(#arrow-purple)"/>
+
+  <rect x="760" y="405" width="270" height="70" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="775" y="428" fill="#c084fc" font-size="13" font-weight="bold">Servidor Worker 1</text>
+  <rect x="775" y="438" width="240" height="26" rx="4" fill="#334155"/>
+  <text x="785" y="455" fill="#f1f5f9" font-size="11">Pool de Hilos: Hilo-1 | Hilo-2 | Hilo-3</text>
+
+  <rect x="760" y="485" width="270" height="70" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="775" y="508" fill="#c084fc" font-size="13" font-weight="bold">Servidor Worker 2</text>
+  <rect x="775" y="518" width="240" height="26" rx="4" fill="#334155"/>
+  <text x="785" y="535" fill="#f1f5f9" font-size="11">Pool de Hilos: Hilo-1 | Hilo-2 | Hilo-3</text>
+
+  <rect x="760" y="565" width="270" height="70" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="775" y="588" fill="#c084fc" font-size="13" font-weight="bold">Servidor Worker 3</text>
+  <rect x="775" y="598" width="240" height="26" rx="4" fill="#334155"/>
+  <text x="785" y="615" fill="#f1f5f9" font-size="11">Pool de Hilos: Hilo-1 | Hilo-2 | Hilo-3</text>
+
+  <text x="75" y="580" fill="#94a3b8" font-size="11">Aislamiento: Contenedores Docker / Red Interna Segura (Clase 9)</text>
+  <text x="75" y="605" fill="#94a3b8" font-size="11">Concurrencia: ThreadPoolExecutor + Sockets TCP Multihilo (Clase 10)</text>
+
+  <path d="M 890 635 L 890 680 L 400 680 L 400 710" fill="none" stroke="#34d399" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <path d="M 910 635 L 910 690 L 800 690 L 800 710" fill="none" stroke="#34d399" stroke-width="2" marker-end="url(#arrow-green)"/>
+
+  <rect x="40" y="700" width="1020" height="135" rx="14" fill="url(#gradData)" stroke="#10b981" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="60" y="725" fill="#34d399" font-size="12" font-weight="bold" letter-spacing="1">4. ALMACENAMIENTO DISTRIBUIDO (ZONA INTERNA AISLADA - CORTAFUEGOS INTERNO)</text>
+
+  <rect x="70" y="740" width="450" height="75" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="85" y="767" fill="#6ee7b7" font-size="14" font-weight="bold">PostgreSQL (Base de Datos Relacional)</text>
+  <text x="85" y="787" fill="#e2e8f0" font-size="11">Transacciones ACID • Estado de Tareas • Usuarios • Logs de Auditoría</text>
+  <text x="85" y="803" fill="#94a3b8" font-size="10">Persistencia en SQLite (sistema_distribuido.db)</text>
+
+  <rect x="580" y="740" width="450" height="75" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="595" y="767" fill="#6ee7b7" font-size="14" font-weight="bold">Amazon S3 / MinIO (Object Storage)</text>
+  <text x="595" y="787" fill="#e2e8f0" font-size="11">Archivos binarios, payloads pesados, reportes finales y resultados</text>
+  <text x="595" y="803" fill="#94a3b8" font-size="10">E/S optimizada en bloques de 4096 Bytes (Clase 10)</text>
+</svg>
